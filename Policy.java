@@ -170,7 +170,7 @@ public class Policy
             bmiFee = 0;
          }
          
-      insurancePrice = basePrice + ageFee + bmiFee;
+      insurancePrice = basePrice + ageFee + smokeFee + bmiFee;
       
       return insurancePrice;
    }
