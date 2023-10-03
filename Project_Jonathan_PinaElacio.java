@@ -1,8 +1,9 @@
+import java.io.*;
 import java.util.Scanner;
 
 public class Project_Jonathan_PinaElacio
 {
-   public static void main(String[] args)
+   /**public static void main(String[] args)
    {
       Policy insurance = new Policy();
       Scanner Keyboard = new Scanner(System.in);
@@ -55,6 +56,35 @@ public class Project_Jonathan_PinaElacio
       System.out.printf("Policyholder's Weight: %.1f%n", insurance.getWeight());
       System.out.printf("Policyholder's BMI: %.2f%n", BMI);
       System.out.printf("Policy Price: $%.2f%n", insurance.getInsurancePrice(BMI));
+   }*/
+   
+   public static void main(String[] args) throws IOException
+   {
+      File file = new File("PolicyInformation.txt");
+      Policy insurance = new Policy();
+      
+      Scanner inputFile = new Scanner(file);
+      
+      double[] policyNumber, age, height, weight, BMI;
+      long[] providerName, firstName, lastName, smokeStatus;
+      
+      
+      
+      while(inputFile.hasNext())
+      {
+        policyNumber = inputFile.nextDouble();
+        insurance.setPolicyNumber(policyNumber);
+
+        providerName = inputFile.nextLine();
+        firstName = inputFile.nextLine();
+        lastName = inputFile.nextLine();
+        age = inputFile.nextDouble();
+        smokeStatus = inputFile.nextLine();
+        height = inputFile.nextDouble();
+        weight = inputFile.nextDouble();
+      }
+      
+      inputFile.close();
    }
 
 }
