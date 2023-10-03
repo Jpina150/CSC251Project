@@ -23,6 +23,7 @@ public class Project_Jonathan_PinaElacio
          firstName = inputFile.nextLine();
          lastName = inputFile.nextLine();
          age = inputFile.nextDouble();
+         inputFile.nextLine();
          smokerStatus = inputFile.nextLine();
          height = inputFile.nextDouble();
          weight = inputFile.nextDouble();
