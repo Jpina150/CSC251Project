@@ -1,13 +1,12 @@
 public class Policy
 {
    //Fields
-   private double policyNumber, age, height, weight;
-   private String providerName, firstName, lastName, smokeStatus;
+   private double age, height, weight;
+   private String policyNumber, providerName, firstName, lastName, smokeStatus;
    
    //No Arg constructor
    public Policy()
       {
-         policyNumber = 0;
          age = 1;
          height = 1;
          weight = 1;
@@ -24,7 +23,7 @@ public class Policy
          @param heightGiven The policyholder's height
          @param Weight The policyholder's weight
    */
-   public Policy(double pNumberGiven, String pNameGiven, String firstNameGiven, String lastNameGiven, double ageGiven, String smokeStatusGiven, double heightGiven, double weightGiven)
+   public Policy(String pNumberGiven, String pNameGiven, String firstNameGiven, String lastNameGiven, double ageGiven, String smokeStatusGiven, double heightGiven, double weightGiven)
       {
          policyNumber = pNumberGiven;
          providerName = pNameGiven;
@@ -41,7 +40,7 @@ public class Policy
          @param pNumberGiven The holder's policy number
    */
       
-   public void setPolicyNumber(double pNumberGiven)
+   public void setPolicyNumber(String pNumberGiven)
       {
          policyNumber = pNumberGiven;
       }
@@ -113,7 +112,7 @@ public class Policy
       The getPolicyNumber method returns the policy number
          @return The policy number
    */    
-   public double getPolicyNumber()
+   public String getPolicyNumber()
       {
          return policyNumber;
       }
@@ -195,7 +194,7 @@ public class Policy
          @param BMI The policyholder's BMI
          @return the insurance price
    */
-   public double getInsurancePrice(double BMI)
+   public double getInsurancePrice()
    {
       double basePrice = 600;
       double ageFee, smokeFee, bmiFee, insurancePrice;
@@ -218,9 +217,9 @@ public class Policy
             smokeFee = 0;
          }
       
-      if(BMI > 35)
+      if(getBMI() > 35)
          {
-            bmiFee = (BMI - 35) * 20;
+            bmiFee = (getBMI() - 35) * 20;
          }
       else
          {
