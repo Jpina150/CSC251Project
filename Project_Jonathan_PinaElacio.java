@@ -11,6 +11,7 @@ public class Project_Jonathan_PinaElacio
       File file = new File("PolicyInformation.txt");
       Scanner inputFile = new Scanner(file);
       
+      int smokeNum = 0;
       double age, height, weight;
       String policyNumber, providerName, firstName, lastName, smokerStatus;
       
@@ -49,10 +50,12 @@ public class Project_Jonathan_PinaElacio
          System.out.printf("Policyholder's BMI: %.2f%n", policy.getBMI());
          System.out.printf("Policy Price: $%.2f%n", policy.getInsurancePrice());
          System.out.println();
+         
+         if(policy.getSmokeStatus().equalsIgnoreCase("smoker"))
+            smokeNum++;
       }
-
-      
-      inputFile.close();
+         System.out.println("The number of policies with a smoker is: " + smokeNum);
+         System.out.println("The number of policies with a non-smoker is: " + (policyList.size() - smokeNum));
    }
 
 }
